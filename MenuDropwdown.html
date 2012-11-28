@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="pt-br" />
+<meta http-equiv="Window-target" content="_self" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<title>Sarlobetter</title>
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Wallace Erick" />
+
+<link type="text/css" href="css/style.css" rel="stylesheet">
+
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript">
+Zepto(function($){
+	
+	//Mobile 
+	$('ul.dropdown li').tap(function(e){
+		$('ul.dropdown li').removeClass("hover");
+		$(this).addClass("hover");
+		$('ul.dropdown li > ul').animate({ 
+			opacity: 0
+		}, 800, 'ease-out');
+		$(this).find('ul').animate({ 
+			opacity: 1
+		}, 800, 'ease-out');
+	});
+	
+	//Web	
+	/*	
+	$('ul.dropdown li').on('mouseenter', function(e){
+		$(this).addClass("hover");
+		$(this).find('ul').animate({ 
+			opacity: 1
+		}, 800, 'ease-out');
+	});
+	$('ul.dropdown li').on('mouseleave', function(e){
+		$(this).removeClass("hover");
+		$(this).find('ul').animate({ 
+			opacity: 0
+		}, 300, 'ease-out');
+	});	
+	*/
+});
+</script>
+
+</head>
+
+<body>
+
+<div id="content">
+
+<ul class="dropdown">
+        	<li><a href="#">For Facilities</a>
+        		<ul class="sub_menu">
+        			 <li><a href="#">Artificial Turf</a></li>
+        			 <li>
+        				<a href="#">Batting Cages</a>
+        				<ul>
+        					<li><a href="#">Indoor</a></li>
+        					<li><a href="#">Outdoor</a></li>
+        				</ul>
+        			 </li>
+        			 <li><a href="#">Benches &amp; Bleachers</a></li>
+        			 <li><a href="#">Communication Devices</a></li>
+        			 <li><a href="#">Dugouts</a></li>
+        			 <li><a href="#">Fencing &amp; Windscreen</a></li>
+        			 <li><a href="#">Floor Protectors</a></li>
+        			 <li><a href="#">Foul Poles</a></li>
+        			 <li><a href="#">Netting</a></li>
+        			 <li><a href="#">Outdoor Furniture &amp; Storage</a></li>
+        			 <li><a href="#">Outdoor Signs</a></li>
+        			 <li><a href="#">Padding</a></li>
+        			 <li><a href="#">Scoreboards</a></li>
+        			 <li><a href="#">Shade Structures</a></li>
+        			 <li><a href="#"> - VIEW ALL - </a></li>
+        		</ul>
+        	</li>
+        	<li><a href="#">Field Maintenance</a>
+        		<ul class="sub_menu">
+        			<li><a href="#">All-in-One Team Cart</a></li>
+        			<li><a href="#">Air &amp; Electrical Reels</a></li>
+        			 <li><a href="#">Field Drags</a></li>
+        			 <li>
+        				<a href="#">Field Marking Equipment</a>
+        				<ul>
+        					<li><a href="#">Batter's Box Templates</a></li>
+        					<li><a href="#">Dryline Markers</a></li>
+        					<li><a href="#">Field Paint</a></li>
+        					<li><a href="#">Field Sprayers</a></li>
+        					<li><a href="#">Stencils</a></li>
+        				</ul>
+        			 </li>
+        			 <li>
+        				<a href="#">Field Tarps</a>
+        				<ul>
+        					<li><a href="#">Area Tarps</a></li>
+        					<li><a href="#">Growth Covers / Protectors</a></li>
+        					<li><a href="#">Infield Tarps</a></li>
+        					<li><a href="#">Tarp Accessories</a></li>
+        				</ul>
+        			 </li>
+        			 <li><a href="#">Hand Tools</a></li>
+        			 <li>
+        				<a href="#">Irrigation, Hoses, Nozzles</a>
+        				<ul>
+        					<li><a href="#">Hoses &amp; Hose Reels</a></li>
+        					<li><a href="#">Irrigation</a></li>
+        					<li><a href="#">Nozzles</a></li>
+        				</ul>
+        			 </li>
+        			 <li><a href="#">Layout &amp; Measurement Tools</a></li>
+        			 <li><a href="#">Moisture Removal</a></li>
+        			 <li><a href="#">Mound &amp; Home Plate Fortification</a></li>
+        			 <li><a href="#">Mowers &amp; Stripers</a></li>
+        			 <li><a href="#">Soil &amp; Enviornmental Management</a></li>
+        			 <li><a href="#">Soil Amendments</a></li>
+        			 <li><a href="#">Spreaders &amp; Sweepers</a></li>
+        			 <li><a href="#"> - VIEW ALL - </a></li>
+        		</ul>
+        	</li>
+        </ul>
+</div> <!-- /content -->
+
+</body>
+</html>

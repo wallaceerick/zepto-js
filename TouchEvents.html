@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="pt-br" />
+<meta http-equiv="Window-target" content="_self" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<title>TouchEvents</title>
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Wallace Erick" />
+
+<link type="text/css" href="css/style.css" rel="stylesheet">
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript">
+Zepto(function($){
+	
+	var speed = 300;
+	var easing = "'ease-out'";
+	
+	$('ul.events li').append('<span class="delete">Deletar</span>');
+	
+	//Tap
+	$('.events li.tap').tap(function(){
+		$('.delete').animate({
+			opacity: 0,
+			right: '-70px' 
+		}, speed, easing);
+		$('.delete', this).animate({
+			opacity: 1 ,
+			right: '10px'
+		}, speed, easing);
+	});
+	
+	//singleTap
+	$('.events li.singleTap').singleTap(function(){
+		$('.delete').animate({
+			opacity: 0,
+			right: '-70px' 
+		}, speed, easing);
+		$('.delete', this).animate({
+			opacity: 1 ,
+			right: '10px'
+		}, speed, easing);
+	});
+	
+	//doubleTap
+	$('.events li.doubleTap').doubleTap(function(){
+		$('.delete').animate({
+			opacity: 0,
+			right: '-70px' 
+		}, speed, easing);
+		$('.delete', this).animate({
+			opacity: 1 ,
+			right: '10px'
+		}, speed, easing);
+	});
+	
+	//longTap
+	$('.events li.longTap').longTap(function(){
+		$('.delete').animate({
+			opacity: 0,
+			right: '-70px' 
+		}, speed, easing);
+		$('.delete', this).animate({
+			opacity: 1 ,
+			right: '10px'
+		}, speed, easing);
+	});
+	
+	//swipe
+	$('.events li.swipe').swipe(function(){
+		$('.delete').animate({
+			opacity: 0,
+			right: '-70px' 
+		}, speed, easing);
+		$('.delete', this).animate({
+			opacity: 1 ,
+			right: '10px'
+		}, speed, easing);
+	});
+	
+	//swipeLeft
+	$('.events li.swipeLeft').swipeLeft(function(){
+		$('.delete').animate({
+			opacity: 0,
+			right: '-70px' 
+		}, speed, easing);
+		$('.delete', this).animate({
+			opacity: 1 ,
+			right: '10px'
+		}, speed, easing);
+	});
+	
+	//swipeRight
+	$('.events li.swipeRight').swipeRight(function(){
+		$('.delete').animate({
+			opacity: 0,
+			right: '-70px' 
+		}, speed, easing);
+		$('.delete', this).animate({
+			opacity: 1 ,
+			right: '10px'
+		}, speed, easing);
+	});
+	
+	//swipeUp
+	$('.events li.swipeUp').swipeUp(function(){
+		$('.delete').animate({
+			opacity: 0,
+			right: '-70px' 
+		}, speed, easing);
+		$('.delete', this).animate({
+			opacity: 1 ,
+			right: '10px'
+		}, speed, easing);
+	});
+	
+	//swipeDown
+	$('.events li.swipeDown').swipeDown(function(){
+		$('.delete').animate({
+			opacity: 0,
+			right: '-70px' 
+		}, speed, easing);
+		$('.delete', this).animate({
+			opacity: 1 ,
+			right: '10px'
+		}, speed, easing);
+	});	
+	
+	//Delete a linha no evento TAP
+	$('.delete').tap(function(){
+		$(this).parent('li').animate({
+			opacity: 0,
+			height: '0px',
+			padding: '0px',
+			margin: '0px'
+		}, speed, easing);
+	});
+});
+</script>
+
+</head>
+
+<body>
+
+	<ul class="events">
+		<li class="tap"><a href="#">Tap</a></li>
+		<li class="singleTap"><a href="#">Single Tap</a></li>
+		<li class="doubleTap"><a href="#">Double Tap</a></li>
+		<li class="longTap"><a href="#">Long Tap [750ms +]</a></li>
+		<li class="swipe"><a href="#">Swipe</a></li>
+		<li class="swipeUp"><a href="#">Swipe Up</a></li>
+		<li class="swipeDown"><a href="#">Swipe Down</a></li>
+		<li class="swipeLeft"><a href="#">Swipe Left</a></li>
+		<li class="swipeRight"><a href="#">Swipe Right</a></li>
+	</ul>
+</body>
+</html>

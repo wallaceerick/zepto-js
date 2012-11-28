@@ -1,0 +1,182 @@
+* {
+	margin:0;
+	padding:0;
+	font-size:16px;
+	font-family:"Trebuchet MS";
+	color:#000;
+	list-style:none;
+}
+a {
+	text-decoration:none;
+}
+h1 {
+	font-size:30px;
+	color:#00C;
+}
+h1 span {
+	color:#ff0088;
+}
+h1 span.roxo {
+	color:#609;
+}
+#content {
+	display:block;
+	width:800px;
+	height:auto;
+	margin:20px auto;
+}
+#block {
+	display:block;
+	width:100px;
+	height:100px;
+	background:#ff0088;
+}
+
+
+
+ul.dropdown                         	{ position: relative; }
+ul.dropdown li                      	{ font-weight: bold; float: left; zoom: 1; background: #ccc; }
+ul.dropdown a:hover		           	{ color: #000; }
+ul.dropdown a:active                	{ color: #ffa500; }
+ul.dropdown li a                    	{ display: block; padding: 4px 8px; border-right: 1px solid #333; color: #222; }
+ul.dropdown li:last-child a         	{ border-right: none; } /* Doesn't work in IE */
+ul.dropdown li.hover,
+ul.dropdown li:hover                	{ background: #F3D673; color: black; position: relative; }
+ul.dropdown li.hover a              	{ color: black; }
+/*  LEVEL TWO */
+ul.dropdown ul 					{ width: 220px; visibility: hidden; position: absolute; top: 100%; left: 0; height:200px;}
+ul.dropdown ul li 					{ font-weight: normal; background: #f6f6f6; color: #000; border-bottom: 1px solid #ccc; float: none; }
+/* IE 6 & 7 Needs Inline Block */
+ul.dropdown ul li a					{ border-right: none; width: 100%; display: inline-block; } 
+/* LEVEL THREE */
+ul.dropdown ul ul 					{ left: 100%; top: 0; }
+ul.dropdown li:hover > ul 			{ visibility: visible; opacity:0;}
+
+
+
+
+ul.events {
+}
+ul.events li {
+	display:block; 
+	height:25px;
+	line-height:25px;
+	position:relative;
+	background:#eee;
+	color:#000;
+	padding:10px;
+	margin:0 0 1px 0;
+	overflow:hidden;
+}
+ul.events li span.delete {
+	display:block;
+	background:#C30;
+	color:#fff;
+	position:absolute;
+	top:9px;
+	right:-70px;
+	border-radius:5px;
+	display:block;
+	cursor:pointer;
+	padding:2px 6px;
+	font-size:12px;
+	width:40px;
+}
+
+
+
+
+
+
+#head {
+	position:fixed;
+	top:0;
+	left:0;
+	background:rgba(0,0,0,0.9);
+	z-index:998;
+	width:100%;
+	height:60px;
+}
+#head a {
+	color:#ff0088;
+	float:right;
+	background:#fff;
+	padding:5px 15px;
+	border-radius:7px;
+	margin:14px 10px 0 0;
+}
+#search {
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-100% 0 0 -45%;	
+	 
+	border-radius:10px;
+	background:rgba(0,0,0,0.7);
+	width:90%;
+	text-align:center;
+	padding:0 0 1px 0;
+	z-index:999;
+}
+#search a {
+	position:absolute;
+	right:-10px;
+	top:-10px;
+	display:block;
+	border-radius:100%;
+	width:35px;
+	height:35px;
+	line-height:35px;
+	text-align:center;
+	color:#fff;
+	font-size:1.4em;
+	text-decoration:none;
+	background:rgba(0,0,0,0.8);
+	
+}
+#search h1, #search p {
+	color:#fff;
+	padding:8px 0 10px 10px;
+	font-size:2em;
+}
+#search p {
+	text-align:left;
+	font-size:1em;
+	padding:0 0 0 11px;
+}
+#search input {
+	border:none;
+	padding:3px;
+	margin:10px;
+	display:block;
+	width:91%;
+}
+#search button {
+	background:#ff0088;
+	color:#fff;
+	border-radius:5px;
+	border:none;
+	margin:10px;
+	display:block;
+	width:93%;
+	padding:5px 0;
+	font-size:1.3em;
+	text-align:center;
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

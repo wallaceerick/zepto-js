@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>jqTouch</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Wallace Erick" />
+
+<link type="text/css" href="css/style.css" rel="stylesheet">
+<link type="text/css" href="css/jqtouch.css" rel="stylesheet">
+	   
+</head>
+
+<body>
+
+<div id="jqt">	
+	
+	<div id="home" class="current">
+		<div class="toolbar">
+			<h1>Animations</h1>
+		</div>
+		<ul class="rounded">
+			<li><a href="#modelo">Slide</a></li>
+			<li><a href="#modelo" class="slideup">Slide Up</a></li>
+			<li><a href="#modelo" class="dissolve">Dissolve</a></li>
+			<li><a href="#modelo" class="pop">Pop</a></li>
+			<li><a href="#modelo" class="flipright">Flip right</a></li>
+			<li><a href="#modelo" class="flipleft">Flip left</a></li>
+			<li><a href="#modelo" class="cube">Cube</a></li>
+			<li><a href="#modelo" class="swap">Swap</a></li>
+			<li><a href="#callback" class="swap">Link via Ajax com Callback</a></li>
+			<li><a href="Lipsum.html" class="pop">Link via Ajax Normal</a></li>
+			<li><a href="outros/jqtouch/demos/main/ajax_long.html" class="pop">Link via Ajax Externo</a></li>
+			<li><a href="#" id="link_ajax">Link via Ajax por ID</a></li>
+		</ul>
+	</div> <!-- /home -->
+	
+	<div id="modelo">
+		<div class="toolbar">
+			<h1></h1>
+			<a href="#home" class="back">Home</a>
+			<a href="#about" class="button">Search</a>
+		</div>
+		<ul class="rounded">
+			<li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</li>
+		</ul>
+		<a href="#" class="blueButton goback">Go back</a> 
+	</div> <!-- /modelo -->
+	
+	<div id="callback"> 
+	</div>
+			
+</div>
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/jqtouch.min.js"></script> 
+<script type="text/javascript" src="js/autotitles.js"></script> 
+<script type="text/javascript" src="js/prefixfree.js"></script>
+<script type="text/javascript" charset="utf-8">
+var jQT = new $.jQTouch({
+    	icon: 'images/jqtouch.png',
+	icon4: 'images/jqtouch4.png',
+	startupScreen: 'images/jqt_startup.png',
+	addGlossToIcon: false,
+	preloadImages: []
+});
+Zepto(function($){
+	$('#callback').bind('pageAnimationStart', function(e, info){
+		if (!$(this).data('loaded')){
+			$(this).load('Lipsum.html', function(){
+				$(this).parent().data('loaded', true);  
+			});
+		}
+	});			 
+	$('#link_ajax').tap(function(){
+		jQT.goTo('Lipsum.html', 'pop');
+	});
+});	
+</script>
+
+</body>
+</html>

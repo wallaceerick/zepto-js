@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="true">
+<meta name="MobileOptimized" content="width">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Slider</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Wallace Erick" />
+<style type="text/css">
+body {
+	overflow:hidden;
+}
+#main {
+	width: 300px;
+	margin: 100px auto;
+	padding: 40px 20px;
+	background:#ccc;
+	font-size: 16px;
+	line-height: 24px;
+}
+.mod-input-slider {
+	width: 300px;
+	margin: 0 auto;
+}
+.mod-is-container {
+	width: 280px;
+	height: 10px;
+	padding: 6px 10px;
+	display: block;
+	overflow: visible;
+	position: relative;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .3) inset, 0 1px 0 rgba(255, 255, 255, .5);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .3) inset, 0 1px 0 rgba(255, 255, 255, .5);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .3) inset, 0 1px 0 rgba(255, 255, 255, .5);
+}
+.snapping .mod-is-container {
+	width: 290px;
+	height: 24px;
+	margin: 0 auto;
+	padding: 0 5px;
+	-webkit-border-radius: none;
+	-moz-border-radius: none;
+	border-radius: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.mod-is-knob {
+	width: 23px;
+	height: 23px;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: transparent url('http://maxdegterev.name/experiments/zslider/static/input_slider_knob.png') no-repeat;
+	-webkit-background-size: 23px;
+	background-size: 23px;
+}
+.mod-is-track {
+	width: 280px;
+	height: 8px;
+	display: block;
+	background: transparent url('http://maxdegterev.name/experiments/zslider/static/input_slider_bg.png') no-repeat -300px 0;
+	-webkit-background-size: 600px 8px;
+	background-size: 600px 8px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid rgba(0, 0, 0, .3);
+}
+.snapping .mod-is-track {
+	width: 290px;
+	height: 24px;
+	display: block;
+	background: none;
+	-webkit-border-radius: none;
+	-moz-border-radius: none;
+	border-radius: none;
+	border: none;
+}
+.snapping.points3 .mod-is-track {
+	background: transparent url('http://maxdegterev.name/experiments/zslider/static/input_slider_sp3_bg.png') no-repeat 0 3px;
+	-webkit-background-size: 290px 17px;
+	background-size: 290px 17px;
+}
+</style>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/islider.js"></script>
+<script type="text/javascript" src="js/slider.js"></script> 
+<script type="text/javascript">
+Zepto(function($){	
+	var sliders = $('.mod-input-slider'),
+	simple = sliders.not('.snapping'),
+	snapping = sliders.filter('.snapping');
+	simple.inputSlider();
+	snapping.inputSlider({ type: 'snap', points: 3});	
+});
+</script>
+</head>
+
+<body>
+<div id="main">
+	<div class="mod-input-slider"> <span class="mod-is-container"> <i class="mod-is-knob"></i> <b class="mod-is-track"></b> </span>
+		<input class="mod-is-input" data-percent="0" type="hidden" name="somename" value="">
+	</div>
+	
+	<br />
+	
+	<div class="mod-input-slider snapping points3"> <span class="mod-is-container"> <i class="mod-is-knob"></i> <b class="mod-is-track"></b> </span>
+		<input class="mod-is-input" type="hidden" name="othername" value="">
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="true">
+<meta name="MobileOptimized" content="width"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<title>CharLimiter</title>
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Wallace Erick" />
+
+<style type="text/css">
+body {
+	overflow:hidden;
+	font-family:Helvetica;
+	font-size:14px;
+}
+textarea {
+	background:#eee;
+	border:1px solid #09F;
+	color:#09F;
+	padding:10px;
+	border-radius:3px;
+	width:200px;
+	height:50px;
+}
+textarea.chega { 
+	border:1px solid #F00;
+	color:#F00;
+}
+textarea.certinho { 
+	border:1px solid #3C3;
+	color:#3C3;
+}
+</style>
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript">
+Zepto(function($){	
+	$('textarea').live('blur keyup paste change',function(e){          
+     var _this = this, maxlength = 10;
+		setTimeout(function(){
+			if(_this.value.length > maxlength){
+				$('textarea').addClass('chega');
+				_this.value = _this.value.substr(0,maxlength);
+		    } 
+		    else {
+				$('textarea').removeClass('chega');
+		    }
+		},1);         
+	});	
+});
+</script>
+
+</head>
+
+<body>
+
+<h1>Esse textarea permite 10 caracteres ou menos.</h1>
+<textarea>1234567891</textarea>
+
+</body>
+</html>

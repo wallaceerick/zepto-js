@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="pt-br" />
+<meta http-equiv="Window-target" content="_self" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<title>Teste</title>
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Wallace Erick" />
+
+<link type="text/css" href="css/style.css" rel="stylesheet">
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<!-- Necessário apenas para ser CrossBrownser-->
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript" src="js/fx.js"></script>
+<!-- -->
+<script type="text/javascript">
+Zepto(function($){	
+	$('h1 span:last-child').addClass('roxo');
+	
+	//Animação 1
+	$('a#go').on('click', function(e){
+		$('.um').animate({
+			opacity: 0.25, 
+			left: '50px',
+			color: '#abcdef',
+			rotateZ: '45deg', 
+			translate3d: '0,10px,0'
+		}, 500, 'ease-out');
+	});
+	
+	//Animação 2
+	$('.dois').on('mouseover', function(e){
+		$(this).animate({
+			opacity: 0.25, 
+			left: '50px',
+			color: '#abcdef',
+			rotateZ: '45deg', 
+			translate3d: '0,10px,0'
+		}, 500, 'ease-out');
+	});
+	
+	//Animação 3
+	$('.tres').anim({ rotate: '720deg', opacity: .5 }, 2, 'ease-out')
+});
+</script>
+
+</head>
+
+<body>
+
+<div id="content">
+
+<h1>Zepto<span>.</span><span>js</span></h1>
+<br /><br /><br /><br />
+
+<a href="#" id="go" title="Go">Go</a><br />
+
+<div id="block" class="um"></div>
+
+<br /><br />
+
+<div id="block" class="dois"></div>
+
+<br /><br />
+
+<div id="block" class="tres"></div>
+
+</div> <!-- /content -->
+
+</body>
+</html>

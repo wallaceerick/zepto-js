@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="true">
+<meta name="MobileOptimized" content="width">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<title>Page Flipper</title>
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Wallace Erick" />
+
+<style type="text/css">
+#demo1 {
+	height: 480px;
+	width: 1600px;
+	-webkit-perspective: 1000;
+}
+.card, .front, .back {
+	border-radius: 10px;
+	color: #fff;
+	float: left;
+	line-height: 440px;
+	margin: 10px;
+	position: relative;
+	padding: 0;
+	text-align: center;
+	width: 300px;
+	height: 440px;
+}
+.front, .back {
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	-webkit-backface-visibility: hidden;
+}
+.back {
+	color: #fff;
+	background: #000;
+	-webkit-transform: rotateY(180deg) translate3d(0, 0, 0);
+}
+.card {
+	-webkit-transform-style: preserve-3d;
+	-webkit-animation-name: default;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+}
+.card.flipped {
+	-webkit-animation-name: cardflipped;
+}
+#card1 .front {
+	background: #FF6;
+	color:#000;
+}
+#card2 .front {
+	background: #B00004;
+}
+#card3 .front {
+	background: #1C8B00;
+}
+#card4 .front {
+	background: #FF9500;
+}
+#card5 .front {
+	background: #3A8AD5;
+}
+@-webkit-keyframes default {
+from {
+	-webkit-transform: rotateY(180deg) translate3d(0, 0, 0);
+}
+to {
+	-webkit-transform: rotateY(0deg) translate3d(0, 0, 0);
+}
+}
+@-webkit-keyframes cardflipped {
+from {
+	-webkit-transform: rotateY(0deg) translate3d(0, 0, 0);
+}
+to {
+	-webkit-transform: rotateY(180deg) translate3d(0, 0, 0);
+}
+}
+</style>
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/flickable.js"></script>
+<script type="text/javascript">
+Zepto(function($){
+	//http://blog.kojo.com.au/flickable-zepto-plugin/	
+	$('#demo1').flickable({segments:5});
+	
+	$('.front, .back').tap(function() {
+		var el = $(this).parent();
+		el.toggleClass('flipped')
+	});
+			
+});
+</script>
+
+</head>
+
+<body>
+
+<div id="demo1">
+		
+	<!-- Card 1 -->
+	<div class="card" id="card1">
+		<div class="front">Tap to flip</div>
+		<div class="back">Tap to flip</div>
+	</div>			
+			
+	<!-- Card 2 -->
+	<div class="card" id="card2">
+		<div class="front">Tap to flip</div>
+		<div class="back">Tap to flip</div>
+	</div>			
+			
+	<!-- Card 3 -->
+	<div class="card" id="card3">
+		<div class="front">Tap to flip</div>
+		<div class="back">Tap to flip</div>
+	</div>		
+			
+	<!-- Card 4 -->
+	<div class="card" id="card4">
+		<div class="front">Tap to flip</div>
+		<div class="back">Tap to flip</div>
+	</div>			
+			
+	<!-- Card 5 -->
+	<div class="card" id="card5">
+		<div class="front">Tap to flip</div>
+		<div class="back">Tap to flip</div>
+	</div>
+	
+</div>
+
+</body>
+</html>

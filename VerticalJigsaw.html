@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="true">
+<meta name="MobileOptimized" content="width"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<title>Vertical Jigsaw</title>
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Wallace Erick" />
+
+<style type="text/css">
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	overflow:hidden;
+}
+#wrapper {
+	width: 460px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+#demo3 .col {
+	position: relative;
+	display: block;
+	float: left;
+	margin-right: 1px;
+	width: 150px;
+	height: 300px;
+	overflow: hidden;
+}
+</style>
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/flickable.js"></script>
+<script type="text/javascript">
+Zepto(function($){	
+	//http://blog.kojo.com.au/flickable-zepto-plugin/
+	$('#demo3 img').flickable({segments:3});
+	
+});
+</script>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+	<ul id="demo3">
+		<li class="col"><img id="col1" src="http://blog.kojo.com.au/demos/flickable/img/col1.jpg" alt="Column 1" width="150" height="900" /></li>
+		<li class="col"><img id="col2" src="http://blog.kojo.com.au/demos/flickable/img/col2.jpg" alt="Column 2" width="150" height="900" /></li>
+		<li class="col"><img id="col3" src="http://blog.kojo.com.au/demos/flickable/img/col3.jpg" alt="Column 3" width="150" height="900" /></li>
+	</ul>
+</div>
+
+<p>Mais conteúdo!</p>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="pt-br" />
+<meta http-equiv="Window-target" content="_self" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<title>AnimatedSearch</title>
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Wallace Erick" />
+
+<link type="text/css" href="css/style.css" rel="stylesheet">
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript">
+Zepto(function($){	
+	//Abre Box de Busca
+	$('a#open').tap(function(e){
+		$('#search').animate({
+			opacity: 1,
+			margin: '-25% 0 0 -45%',
+			rotate: '720deg'
+		}, 500, 'ease-out');
+	});
+	
+	//Fecha Box de Busca
+	$('a#close').tap(function(e){
+		$('#search').animate({
+			opacity: 0,
+			margin: '-100% 0 0 -45%',
+			rotate: '0deg'
+		}, 500, 'ease-out');
+	});
+});
+</script>
+
+</head>
+
+<body>
+
+<div id="head">
+<a href="#" id="open" title="Abrir">Abrir</a>
+</div>
+
+<div id="search">
+<a href="#" id="close" title="X">X</a>
+<h1>Buscar</h1>
+<p>Digite abaixo o que está prourando:</p>
+<input type="text" />
+<button type="submit">OK</button>
+</div>
+
+</div> <!-- /content -->
+
+</body>
+</html>

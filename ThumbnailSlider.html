@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="true">
+<meta name="MobileOptimized" content="width"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<title>Thumbnail Slider</title>
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Wallace Erick" />
+
+<style type="text/css">
+body {
+	overflow:hidden;
+}
+#wrapper { 
+	height: 200px;
+	margin: 0 auto;
+	background: #DDDDDD;
+	overflow: hidden;
+}
+#demo2 {
+	width: 3200px;
+	height: 200px;
+	overflow:hidden;
+}
+#demo2 li	{
+	display: block;
+	float: left;
+	width: 200px;
+	height: 200px;
+}
+#demo2 li a {
+	color: blue;
+	display: block;
+	height: 160px;
+	line-height: 160px;
+	text-align: center;
+	margin: 20px;
+	background: #fff;
+	-webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, .2);
+	-moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, .2);
+	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, .2);
+}
+</style>
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/flickable.js"></script>
+<script type="text/javascript">
+Zepto(function($){	
+	//http://blog.kojo.com.au/flickable-zepto-plugin/
+	$('#demo2').flickable({segments:4});
+	$('#demo2 a').tap(function(){ alert('You just tapped "'+$(this).text()+'"'); });			
+	
+	$('#wrapper').css({'width': (($(window).width()))+'px'})
+	
+});
+</script>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+	<ul id="demo2">
+		<li><a>Tap Me 1</a></li>
+		<li><a>Tap Me 2</a></li>
+		<li><a>Tap Me 3</a></li>
+		<li><a>Tap Me 4</a></li>
+		<li><a>Tap Me 5</a></li>
+		<li><a>Tap Me 6</a></li>
+		<li><a>Tap Me 7</a></li>
+		<li><a>Tap Me 8</a></li>
+		<li><a>Tap Me 9</a></li>
+		<li><a>Tap Me 10</a></li>
+		<li><a>Tap Me 11</a></li>
+		<li><a>Tap Me 12</a></li>
+		<li><a>Tap Me 13</a></li>
+		<li><a>Tap Me 14</a></li>
+		<li><a>Tap Me 15</a></li>
+		<li><a>Tap Me 16</a></li>
+	</ul>
+</div>
+
+<p>Mais conteúdo!</p>
+
+</body>
+</html>

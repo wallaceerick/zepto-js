@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="true">
+<meta name="MobileOptimized" content="width"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<title>CharLimiter</title>
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Wallace Erick" />
+
+<style type="text/css">
+body {
+	overflow:hidden;
+	font-family:Helvetica;
+	font-size:14px;
+}
+textarea {
+	background:#eee;
+	border:1px solid #09F;
+	color:#09F;
+	padding:10px;
+	border-radius:3px;
+	width:200px;
+	height:50px;
+}
+textarea.chega { 
+	border:1px solid #F00;
+	color:#F00;
+}
+.error { color:red!important; }
+.normal { color:black!important;}
+</style>
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript">
+Zepto(function($){
+	var text_max = 20;
+	$('#textarea').keyup(function() {
+		var text_length = $('#textarea').val().length;
+		var text_remaining = text_max - text_length;
+		$('#textarea_feedback').html('Restam ' + text_remaining + ' caracteres.');
+		if(text_length > text_max){
+			$(this).addClass('chega');
+		}
+		else {
+			$(this).removeClass('chega');
+		}
+	}); 
+	//$('#textarea_feedback').html(text_max + ' characters remaining');
+	
+	/*
+	//Sem Zepto	
+	window.onload = function() {
+	var chk = document.getElementById('chk');
+	var func = function() {
+	var maxlen = parseInt(this.getAttribute("maxlength"), 10);
+	len = this.value.length;
+	var legend = document.getElementById("itcounts");
+		if(len > maxlen) {
+		legend.value=len+"!";
+		legend.className="error"
+	this.value = this.value.substr(0, maxlen);
+	return false;
+	}
+		legend.className="normal"
+		legend.value=(maxlen-len);        
+	}
+	chk.onkeyup = func;
+	chk.onfocus = func;
+	chk.onblur = func;
+	chk.focus(); // works from file
+	chk.select(); // ditto
+	} 
+	*/
+});
+</script>
+
+</head>
+
+<body>
+<textarea id="textarea" rows="8" cols="30" maxlength="21" ></textarea><br />
+Quantidade máxima de caracteres: 20<br />
+<div id="textarea_feedback"></div>
+
+<!-- Sem Zepto
+<textarea maxlength="200" name="chk" id="chk" rows="10" cols="30">#text#</textarea>
+<br />
+Character Count <input type="text" name="itcounts" id="itcounts" value="#old#" size="4" style="border: 1px solid black;" readonly="readonly" />
+-->
+
+
+</body>
+</html>
